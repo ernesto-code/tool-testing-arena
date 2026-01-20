@@ -59,7 +59,25 @@ Imágenes y texto alternativo
     <main id="main">
       <section id="inicio" class="hero">
         <div class="container hero-inner">
-          <h1>Hola 👋</h1>
+          <h1 style="display: flex; align-items: center; font-family: sans-serif; gap: 10px;">
+            Hola 
+            <svg 
+                width="40" 
+                height="40" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="#FFD700" 
+                stroke-width="2" 
+                stroke-linecap="round" 
+                stroke-linejoin="round"
+                style="display: inline-block; vertical-align: middle;"
+                role="img" aria-label="Waving hand">
+                <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+                <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+                <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+                <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path>
+            </svg>
+            </h1>
           <p>Esta es una página estática lista para GitHub Pages. Dime qué quieres y la vamos adaptando.</p>
           <div class="hero-actions">
             <a class="btn" href="#contacto">Contáctame por via telefonica</a>
@@ -138,7 +156,7 @@ Imágenes y texto alternativo
             <div style="display: flex; flex-direction: column; gap: 10px; max-width: 200px;">
   
                 <input type="text" placeholder="Tercero en recibir foco" tabindex="3"
-                    style="padding: 8px; border: 1px solid #000;">
+                    style="padding: 8px; border: 1px solid #000; color:black">
                     
                 <input type="text" placeholder="Primero en recibir foco" tabindex="1"
                     style="padding: 8px; border: 1px solid #000;">
@@ -245,6 +263,6 @@ Imágenes y texto alternativo
       </div>
     </footer>
 
-    <script src="./script.js"></script>
+   
   </body>
 </html>
