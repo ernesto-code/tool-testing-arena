@@ -114,6 +114,128 @@ Imágenes y texto alternativo
           </form>
         </div>
       </section>
+      <section>
+       
+       <h2>Focus indicator</h2>
+            <button 
+                style="padding: 10px; background-color: #007bff; color: white; border: none; outline: none;">
+                Botón sin foco
+            </button>
+
+            <a href="#" 
+                style="color: blue; text-decoration: underline; outline: none;">
+                Enlace sin foco
+            </a>    
+
+            <button 
+                onfocus="this.style.outline='2px solid #003366'" 
+                onblur="this.style.outline='none'"
+                style="padding: 10px; background-color: #007bff; color: white; border: none; cursor: pointer;">
+                Foco con poco contraste
+            </button>
+
+            <h2>Orden de Foco</h2>
+            <div style="display: flex; flex-direction: column; gap: 10px; max-width: 200px;">
+  
+                <input type="text" placeholder="Tercero en recibir foco" tabindex="3"
+                    style="padding: 8px; border: 1px solid #000;">
+                    
+                <input type="text" placeholder="Primero en recibir foco" tabindex="1"
+                    style="padding: 8px; border: 1px solid #000;">
+                    
+                <input type="text" placeholder="Segundo en recibir foco" tabindex="2"
+                    style="padding: 8px; border: 1px solid #000;">
+
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 15px; max-width: 400px; padding: 20px; border: 2px solid #333; border-radius: 8px; font-family: sans-serif;">
+  
+                <label for="campo1">1. Escribe algo y presiona <b>Enter</b> para saltar al 3:</label>
+                <input type="text" id="campo1" 
+                    onkeydown="if(event.key === 'Enter') { document.getElementById('campo3').focus(); }"
+                    onfocus="this.style.outline='3px solid #3498db'; this.style.outlineOffset='2px';" 
+                    onblur="this.style.outline='none'"
+                    style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;" 
+                    placeholder="Presiona Enter aquí...">
+
+                <label for="campo2">2. Campo que será saltado por el Enter:</label>
+                <input type="text" id="campo2" 
+                    onfocus="this.style.outline='3px solid #3498db'; this.style.outlineOffset='2px';" 
+                    onblur="this.style.outline='none'"
+                    style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;" 
+                    placeholder="Ignorado por el Enter del Campo 1">
+
+                <label for="campo3">3. Destino del foco programático:</label>
+                <input type="text" id="campo3" 
+                    onfocus="this.style.outline='3px solid #e67e22'; this.style.outlineOffset='2px';" 
+                    onblur="this.style.outline='none'"
+                    style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;" 
+                    placeholder="¡Llegaste aquí!">
+
+                <button type="button" 
+                    onclick="document.getElementById('campo1').focus();"
+                    onfocus="this.style.outline='3px solid #27ae60'; this.style.outlineOffset='2px';" 
+                    onblur="this.style.outline='none'"
+                    style="padding: 10px; background-color: #27ae60; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                    Reiniciar al Campo 1
+                </button>
+
+            </div>
+                <div style="padding: 20px; font-family: sans-serif;">
+                <h3>Página Principal</h3>
+                <button onfocus="this.style.outline='3px solid red'" style="padding: 10px;">Botón Externo 1</button>
+                <button onfocus="this.style.outline='3px solid red'" style="padding: 10px;">Botón Externo 2</button>
+                
+                <hr>
+
+                <button id="btnAbrirError" 
+                        onclick="document.getElementById('modalError').style.display='flex';"
+                        style="padding: 15px; background: #27ae60; color: white; border: none; cursor: pointer;">
+                    Abrir Modal (SIN TRAMPA)
+                </button>
+                </div>
+
+                <div id="modalError" 
+                    style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); align-items: center; justify-content: center; z-index: 1000;">
+                
+                <div style="background: white; padding: 30px; border-radius: 8px; width: 300px; text-align: center; font-family: sans-serif;">
+                    <h2 style="color: red;">¡Error de Foco!</h2>
+                    <p>Si presionas Tab varias veces, el foco se irá a los botones rojos del fondo.</p>
+                    
+                    <button onfocus="this.style.outline='3px solid blue'" style="padding: 10px; margin-bottom: 10px;">
+                    Botón dentro del Modal
+                    </button>
+                    
+                    <button onclick="document.getElementById('modalError').style.display='none';"
+                            onfocus="this.style.outline='3px solid blue'"
+                            style="padding: 10px; background: #ccc; border: none;">
+                    Cerrar
+                    </button>
+                </div>
+                </div>
+
+
+                <div 
+  tabindex="0"
+  onclick="alert('¡Acción ejecutada!')"
+  onfocus="this.style.outline='3px solid orange'"
+  onblur="this.style.outline='none'"
+  style="padding: 10px 20px; background-color: #3498db; color: white; display: inline-block; cursor: pointer; border-radius: 5px; font-family: sans-serif; margin-top: 10px;">
+  Púlsame (Tabula hacia mí, pero Enter no hará nada)
+</div>
+
+
+<div id="miFalsoBoton" 
+     style="padding: 10px 20px; background-color: #3498db; color: white; display: inline-block; cursor: pointer; border-radius: 5px; font-family: sans-serif;">
+  Soy un div (Inalcanzable por teclado)
+</div>
+
+<script>
+  // Intentamos asignarle un evento, pero el usuario de teclado no puede llegar aquí
+  document.getElementById('miFalsoBoton').addEventListener('click', function() {
+    alert('Hiciste clic con el ratón');
+  });
+</script>
+      </section>
     </main>
 
     <footer class="site-footer">
