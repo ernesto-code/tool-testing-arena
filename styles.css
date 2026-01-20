@@ -151,10 +151,7 @@ input:focus-visible, textarea:focus-visible {
 /* Debug: simula stress parecido a 200% (sin depender del zoom real) */
 
 
-html.debug-reflow * {
-  /* WCAG text spacing-ish stress */
-  
-}
+
 
 @media (max-width: 320px) {
   html.debug-reflow .container {
