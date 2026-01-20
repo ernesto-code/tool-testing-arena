@@ -1,0 +1,128 @@
+<!--
+Contraste de color avanzado (OOS)
+
+Zoom y reflow
+
+- Detección de texto cortado, solapado, doble scroll
+- Uso de agentes para interpretación visual
+- Navegación por teclado
+
+Keyboard operable
+
+- Focus order, focus lost, focus visible
+- Detección de trampas de teclado (keyboard traps)
+
+Name, Role, Value
+
+- Verificación automática de nombre accesible, rol y estado
+
+Imágenes y texto alternativo
+
+- Clasificación automática: decorativas, informativas, activas
+- Validación de alt y nombre accesible
+- Incluye logos (decorativos / informativos / activos)
+
+
+-->
+
+
+
+<!doctype html>
+<html lang="es" class="debug-reflow">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Sitio estático alojado en GitHub Pages." />
+    <title>Mi sitio en GitHub Pages</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="logo" aria-hidden="true">⬤</span>
+          <span class="brand-name">Mi Sitio</span>
+        </div>
+
+        <nav aria-label="Navegación principal">
+          <ul class="nav">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="inicio" class="hero">
+        <div class="container hero-inner">
+          <h1>Hola 👋</h1>
+          <p>Esta es una página estática lista para GitHub Pages. Dime qué quieres y la vamos adaptando.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#contacto">Contáctame por via telefonica</a>
+            <a class="btn btn-ghost" href="#servicios">Ver más</a>
+          <a class="btn" href="#contacto">Contáctame</a><a class="btn" href="#contacto">Contáctame por via telefonica</a></div>
+        </div>
+      </section>
+
+      <section id="servicios" class="section">
+        <div class="container">
+          <h2>Servicios</h2>
+          <div class="grid">
+            <article class="card">
+              <h3>Servicio 1</h3>
+              <p>Descripción breve del servicio.</p>
+            </article>
+            <article class="card">
+              <h3>Servicio 2</h3>
+              <p>Descripción breve del servicio.</p>
+            </article>
+            <article class="card">
+              <h3>Servicio 3</h3>
+              <p>Descripción breve del servicio.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacto" class="section">
+        <div class="container">
+          <h2>Contacto</h2>
+          <p>Ejemplo de formulario (sin backend). Podemos conectarlo luego a Formspree / Netlify Forms / Google Forms, etc.</p>
+
+          <form class="form" id="contactForm">
+            <label>
+              Nombre
+              <input name="name" type="text" autocomplete="name" required />
+            </label>
+
+            <label>
+              Email
+              <input name="email" type="email" autocomplete="email" required />
+            </label>
+
+            <label>
+              Mensaje
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+
+            <button class="btn" type="submit">Enviar</button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <small>© <span id="year"></span> Mi Sitio</small>
+        <a href="#inicio">Volver arriba</a>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
